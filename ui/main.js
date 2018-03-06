@@ -1,3 +1,3 @@
 console.log('Loaded!');
-var e = document.getelementById('saket');
+var e = document.getElementById('saket');
 e.innerhtml="saket the great";
