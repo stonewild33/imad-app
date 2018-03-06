@@ -4,7 +4,7 @@ e.innerHTML='saket the great';
 
 var img = document.getElementById('madi');
 
-var left = 0;
+var moveLeft = 0;
 
 function moveRight()
 {   
