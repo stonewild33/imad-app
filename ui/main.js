@@ -4,13 +4,13 @@ e.innerHTML='saket the great';
 
 var img = document.getElementById('madi');
 
-var moveLeft = 0;
+var left = 0;
 
-function moveRight()
+function moveright()
 {   
-    moveLeft = moveLeft + 10;
-    img.style.moveLeft= moveLeft + 'px';
+    left = left + 10;
+    img.style.marginleft= left + 'px';
 }
 img.onclick = function() {
-    var interval = setInterval(moveRight,100);
+    var interval = setInterval(moveright,100);
 };
