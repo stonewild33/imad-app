@@ -5,5 +5,5 @@ e.innerHTML='saket the great';
 var img =document.getElementById('madi');
 
 img.onclick = function() {
-    img.style.rightmargin='100px';
+    img.style.marginleft ='100px';
 };
