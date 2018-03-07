@@ -1,16 +1,47 @@
-console.log('Loaded!');
-var e = document.getElementById('saket');
-e.innerHTML='saket the great';
+var express = require('express');
+var morgan = require('morgan');
+var path = require('path');
 
-var img = document.getElementById('madi');
+var app = express();
+app.use(morgan('combined'));
 
-var marginLeft = 0;
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
 
-function moveright()
-{   
-    marginLeft = marginLeft + 1;
-    img.style.marginLeft= marginLeft + 'px';
-}
-img.onclick = function() {
-    var interval = setInterval(moveright,100);
-};
+app.get('/article-one', function (req, res) {
+res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+});
+
+var counter =0;
+app.get('/counter', function (req, res) {
+    counter = counter + 1;
+    res.send(counter.tostring());
+});
+
+
+
+app.get('/article-two', function (req, res) {
+  res.send('Articcle two is requested');
+});
+
+app.get('/ui/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+});
+
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+
+app.get('/ui/madi.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+
+
+// Do not change port, otherwise your app won't run on IMAD servers
+// Use 8080 only for local development if you already have apache running on 80
+
+var port = 80;
+app.listen(port, function () {
+  console.log(`IMAD course app listening on port ${port}!`);
+});
