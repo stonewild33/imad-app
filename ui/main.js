@@ -1,4 +1,4 @@
-
+alert("I am an alert box!");
 
 var button = document.getElementById('counter');
 
