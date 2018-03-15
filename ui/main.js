@@ -2,7 +2,7 @@
 
 var button=document.getElementById(counter);
 
-var span = 0;
+var counter = 0;
 button.onClick =function() {
   
   
@@ -10,10 +10,10 @@ button.onClick =function() {
   
   // Render the varible in correct span;
   
-  span = span + 1; 
+  counter = counter + 1; 
   var span=document.getElementById(count);
     
-    span.innerHTMl= span.toString();
+    span.innerHTMl= counter.toString();
 };
 
 
